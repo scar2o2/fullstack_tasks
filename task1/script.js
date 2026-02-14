@@ -65,6 +65,12 @@ function handleSubmit() {
 }
 
 function handleReset() {
-    document.getElementById("form").reset;
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("DOB").value = "";
+    document.getElementById("phNo").value = "";
+    document.getElementById("dept").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("cnfpassword").value = "";
     result.textContent = "";
 }

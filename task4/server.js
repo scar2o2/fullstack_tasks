@@ -13,7 +13,13 @@ const db = mysql.createConnection({
     database: 'order_management'
 });
 
-db.connect();
+db.connect((err) => {
+    if (err) {
+        console.error('Error connecting to database:', err);
+        return;
+    }
+    console.log('Connected to database');
+});
 
 app.get('/orders', (req, res) => {
     const query = `
@@ -44,7 +50,7 @@ app.get('/highest-order', (req, res) => {
         )
     `;
     db.query(query, (err, result) => {
-        if (err) return res.status(500).json(err);
+        if (err) {return res.status(500).json(err);}
         res.json(result);
     });
 });
@@ -67,4 +73,6 @@ app.get('/most-active', (req, res) => {
     });
 });
 
-app.listen(3000);
+app.listen(3000,()=>{
+    console.log('Server running on port 3000');
+});

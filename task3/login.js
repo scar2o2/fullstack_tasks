@@ -26,10 +26,6 @@ form.addEventListener("submit", function(e) {
             msg.style.color = "green";
             msg.textContent = "Login successful";
 
-            setTimeout(() => {
-                window.location.href = "dashboard.html";
-            }, 1000);
-
         } else {
             msg.style.color = "red";
             msg.textContent = data.message;
