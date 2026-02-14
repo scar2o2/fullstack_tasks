@@ -23,14 +23,14 @@ db.connect((err)=>{
 });
 
 app.post('/addData',(req,res)=>{
-    const {name,email,dept,phNo,DOB,password} = req.body;
+    const {username,email,dept,phNo,DOB,password} = req.body;
 
     const query = `
     INSERT INTO student (name, email, dept, phNo, DOB, password)
     VALUES (?, ?, ?, ?, ?, ?)
     `;
 
-    db.query(query, [name, email, dept, phNo, DOB, password], (err,result)=>{
+    db.query(query, [username, email, dept, phNo, DOB, password], (err,result)=>{
         if(err){
             res.json({success:false,message:err.message});
         }else{

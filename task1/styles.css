@@ -32,6 +32,10 @@ label input{
     width: 300px;
     height: 25px;
 }
+label select{
+    width: 300px;
+    height: 25px;
+}
 
 #subBtn{
     background-color: black;

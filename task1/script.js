@@ -21,7 +21,11 @@ function validateForm() {
         result.style.color = "red";
         return false;
     }
-
+    if(phNo.length !== 10 || !/^\d+$/.test(phNo)){
+        result.textContent = "Phone number must be 10 digits";
+        result.style.color = "red";
+        return false;
+    }
     return {
         username,
         email,
@@ -34,7 +38,7 @@ function validateForm() {
 
 function handleSubmit() {
     const formData = validateForm();
-
+    console.log(formData);
     if (formData) {
         fetch('http://localhost:3000/addData', {
             method: 'POST',
